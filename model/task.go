@@ -5,7 +5,14 @@ import (
 )
 
 const (
-	TASK_TABLE_NAME  = "task"
+	TASK_TABLE_NAME = "task"
+)
+
+const (
+	TASK_TYPE_NORMAL = iota
+	TASK_TYPE_BT
+)
+const (
 	TASK_STATUS_WAIT = iota
 	TASK_STATUS_RUNING
 	TASK_STATUS_FAIL
@@ -15,9 +22,9 @@ const (
 var (
 	TaskTypesContent = []string{
 		"普通",
+		"BT",
 	}
 	TaskStatusContent = []string{
-		"",
 		"等待中",
 		"下载中",
 		"失败",

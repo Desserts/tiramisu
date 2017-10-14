@@ -5,6 +5,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	log "github.com/golang/glog"
 	"github.com/jmoiron/sqlx"
+	"tiarmisu/config"
 )
 
 var (
@@ -12,7 +13,7 @@ var (
 )
 
 func init() {
-	err := openDB(dbhost, dbuser, dbpass, dbname, dbport)
+	err := openDB(config.DB_HOST, config.DB_USER, config.DB_PASS, config.DB_NAME, config.DB_PORT)
 	if err != nil {
 		log.Fatalln("open db error: ", err)
 	}
