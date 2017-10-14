@@ -70,3 +70,16 @@ func (t *TaskStruct) GetOneWait() (TaskStruct, error) {
 	err := db.Get(&tt, query, TASK_STATUS_WAIT)
 	return tt, err
 }
+
+func (t *TaskStruct) UpdateGidAndStatus(id int, gid string, status int) error {
+	query := "UPDATE " + TASK_TABLE_NAME + " SET gid = ?, status = ? WHERE id = ?"
+	res, err := db.Exec(query, gid, status, id)
+	if err != nil {
+		return err
+	}
+	_, err = res.RowsAffected()
+	if err != nil {
+		return err
+	}
+	return nil
+}

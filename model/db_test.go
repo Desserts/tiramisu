@@ -34,3 +34,12 @@ func TestTaskStruct_GetOneWait(t *testing.T) {
 	}
 	t.Log(res)
 }
+
+func TestTaskStruct_UpdateGid(t *testing.T) {
+	gid := "testgid"
+	id := 1
+	err := taskModel.UpdateGidAndStatus(id, gid, 1)
+	if err != nil {
+		t.Error(err)
+	}
+}
