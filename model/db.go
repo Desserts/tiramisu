@@ -5,7 +5,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	log "github.com/golang/glog"
 	"github.com/jmoiron/sqlx"
-	"tiarmisu/config"
+	"tiramisu/config"
 )
 
 var (

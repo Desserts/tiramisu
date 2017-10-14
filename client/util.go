@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/NoahShen/aria2rpc"
 	log "github.com/golang/glog"
-	"tiarmisu/config"
+	"tiramisu/config"
 )
 
 type AriaUtil struct{}

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"tiarmisu/model"
+	"tiramisu/model"
 	log "github.com/golang/glog"
 )
 
