@@ -7,4 +7,5 @@ const (
 	DB_NAME = ""
 	DB_PORT = ""
 	RPC_URL = "http://127.0.0.1:6800/jsonrpc"
+	SERVER_PORT = "10001"
 )
