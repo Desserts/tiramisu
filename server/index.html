@@ -6,9 +6,29 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{.Title}}</title>
-    <div>{{.Content}}</div>
+
+    
 </head>
 <body>
+<div>
+    <div class="input-area">
+        <input id="input-url" type="text">
+        <button onclick="Action.ok()">确认</button>
+    </div>
+    <div class="status-area">
 
+    </div>
+</div>
+<script src="//cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    var Action = {
+        ok: function(){
+            var url = $("#input-url").val();
+            $.post("/add",{"url": url}, function(data){
+               console.log(data)
+            })
+        }
+    }
+</script>
 </body>
 </html>

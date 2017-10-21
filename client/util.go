@@ -1,12 +1,11 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"tiramisu/model"
+
 	"github.com/NoahShen/aria2rpc"
 	log "github.com/golang/glog"
-	"tiramisu/config"
-	"tiramisu/model"
 )
 
 var (
@@ -19,12 +18,6 @@ var (
 )
 
 type AriaUtil struct{}
-
-func init() {
-	flag.Parse()
-	flag.Lookup("alsologtostderr").Value.Set("true")
-	aria2rpc.RpcUrl = config.RPC_URL
-}
 
 func getOneToDownload() bool {
 	task, err := taskModel.GetOneWait()
